@@ -1,0 +1,35 @@
+<div class="d-flex flex-column h-100 w-100 mw-100">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Paint&Point S.L.</h1>
+                <span class="navbar-text">
+                    Apps para la gestión de los empleados
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-grid card-columns" *ngIf="empleados && empleados.length > 0">
+        <div class="" *ngFor="let emp of empleados">
+            <div class="card" (click)="abrirModal(emp)">
+                <img src="https://robohash.org/{{emp.id}}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{emp.surname || ''}} {{emp.surname2 || ''}}, {{emp.name || ''}}</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><i class="bi bi-telephone-fill"></i><span class="phone">{{emp.phone || ''}}</span></small>
+                </div>
+            </div>
+            <ng-template #modal_{{empleado.id}} let-modal>
+                <app-modal [empleado]="emp"></app-modal>
+            </ng-template>        
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">© 2023 - Paint&Point S.L. </span>
+        </div>
+    </footer>
+</div>

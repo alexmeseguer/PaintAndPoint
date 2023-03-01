@@ -1,0 +1,44 @@
+
+<div *ngIf="empleado">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Empleado  #{{empleado.id}}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="name_{{empleado.id}}" class="form-label">Nombre</label>
+                    <input id="name_{{empleado.id}}" class="form-control" type="text" [value]="empleado.name" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="surname_{{empleado.id}}" class="form-label">Primer apellido</label>
+                    <input id="surname_{{empleado.id}}" class="form-control" type="text" [value]="empleado.surname" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="surname2_{{empleado.id}}" class="form-label">Nombre</label>
+                    <input id="surname2_{{empleado.id}}" class="form-control" type="text" [value]="empleado.surname2" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="country_{{empleado.id}}" class="form-label">País</label>
+                    <input id="country_{{empleado.id}}" class="form-control" type="text" [value]="empleado.country_name" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="phone_{{empleado.id}}" class="form-label">Teléfono</label>
+                    <input id="phone_{{empleado.id}}" class="form-control" type="text" [value]="empleado.phone" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="sex_{{empleado.id}}" class="form-label">Sexo</label>
+                    <input id="sex_{{empleado.id}}" class="form-control" type="text" [value]="empleado.sex_name" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="datebirthday_{{empleado.id}}" class="form-label">Fecha de nacimiento</label>
+                    <input id="datebirthday_{{empleado.id}}" class="form-control" type="text" [value]="empleado.datebirthday | date: 'dd-MM-yyyy'" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="closeModal()">Cerrar</button>
+    </div>
+</div>
