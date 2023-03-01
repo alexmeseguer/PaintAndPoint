@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { ModalComponent } from './modal/modal.component';
     ],
     imports: [
         BrowserModule,
+        ReactiveFormsModule,
         NgbModule,
         HttpClientModule,
         // AppRoutingModule

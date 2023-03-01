@@ -1,8 +1,9 @@
 
 <div *ngIf="empleado">
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Empleado  #{{empleado.id}}</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+        <img src="https://robohash.org/{{empleado.id}}" class="avatar">
+        <h4 class="modal-title">Empleado  #{{empleado.id}}</h4>
+        <button type="button" class="btn-close" tabindex="-1" (click)="closeModal()"></button>
     </div>
     <div class="modal-body">
         <form>
@@ -16,7 +17,7 @@
                     <input id="surname_{{empleado.id}}" class="form-control" type="text" [value]="empleado.surname" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="surname2_{{empleado.id}}" class="form-label">Nombre</label>
+                    <label for="surname2_{{empleado.id}}" class="form-label">Segundo apellido</label>
                     <input id="surname2_{{empleado.id}}" class="form-control" type="text" [value]="empleado.surname2" readonly>
                 </div>
                 <div class="mb-3">

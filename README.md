@@ -1,4 +1,4 @@
-# PaintPoint - Falta implementar el buscador y algunos retoques visuales
+# PaintPoint
 
 Pasos para ejecutar la aplicación:
  

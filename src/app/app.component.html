@@ -1,8 +1,8 @@
-<div class="d-flex flex-column h-100 w-100 mw-100">
+<div class="d-flex flex-column h-100">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
             <div class="navbar-brand">
-                <h1>Paint&Point S.L.</h1>
+                <h1>Paint & Point S.L.</h1>
                 <span class="navbar-text">
                     Apps para la gestión de los empleados
                 </span>
@@ -10,8 +10,19 @@
         </div>
     </nav>
 
-    <div class="container-grid card-columns" *ngIf="empleados && empleados.length > 0">
-        <div class="" *ngFor="let emp of empleados">
+    <div class="searcher">
+        <input type="text" class="form-control border-transparent form-focus-none" placeholder="Buscador de empleados" [formControl]="searchControl" name="searchControl">
+        <div class="d-flex justify-content-center my-5" *ngIf="loading">
+            <div class="spinner-border" role="status">
+              <span class="sr-only"></span>
+            </div>
+        </div>
+        <p>Mostrando {{empleados.length || 0 }} de un total de {{copiaEmpleados.length || 0}}</p>
+    </div>
+
+
+    <div class="container-grid" *ngIf="empleados && empleados.length > 0">
+        <div class="card-column" *ngFor="let emp of empleados">
             <div class="card" (click)="abrirModal(emp)">
                 <img src="https://robohash.org/{{emp.id}}" class="card-img-top">
                 <div class="card-body">
@@ -27,7 +38,7 @@
         </div>
     </div>
 
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-light position-sticky">
         <div class="container">
             <span class="text-muted">© 2023 - Paint&Point S.L. </span>
         </div>
